@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ScrollingBanner from '../components/ScrollingBanner';
 import ProductCard from '../components/ProductCard';
-import { ChevronRight, TrendingUp, Crown, Zap, Star, Users, Download, ArrowRight, Play, Shield, Award } from 'lucide-react';
+import { ChevronRight, TrendingUp, Crown, Zap, Star, Users, ArrowRight, Play, Shield, Award, Truck } from 'lucide-react';
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState('Semua');
@@ -150,7 +150,7 @@ const Home = () => {
 
   const stats = [
     { number: "50K+", label: "Pengguna Aktif", icon: Users },
-    { number: "10K+", label: "Produk Digital", icon: Download },
+    { number: "10K+", label: "Produk Digital", icon: Zap },
     { number: "4.9", label: "Rating Rata-rata", icon: Star },
     { number: "99%", label: "Kepuasan Pelanggan", icon: Award },
   ];
@@ -312,11 +312,11 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 text-center group hover:border-blue-500/50 transition-all duration-300">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Download className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                <Truck className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-4">Download Instan</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4">Akses Instan</h3>
               <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
-                Dapatkan akses langsung ke semua file setelah pembelian. Tidak perlu menunggu!
+                Dapatkan akses langsung ke semua produk setelah pembelian. Tidak perlu menunggu!
               </p>
             </div>
 

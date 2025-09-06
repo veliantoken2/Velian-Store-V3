@@ -18,8 +18,8 @@ const Header = () => {
   const navLinks = [
     { path: '/', label: 'Beranda' },
     { path: '/products', label: 'Produk' },
-    { path: '/categories', label: 'Kategori' },
     { path: '/about', label: 'Tentang' },
+    { path: '/faq', label: 'FAQ' },
   ];
 
   const isActive = (path: string) => location.pathname === path;

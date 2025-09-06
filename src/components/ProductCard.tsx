@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Star, Download, Eye, Heart, Share2, ChevronDown } from 'lucide-react';
+import { ShoppingCart, Star, Eye, Heart, Share2, ChevronDown } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 interface ProductVariant {
@@ -189,9 +189,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <Star className="w-4 h-4 fill-current drop-shadow-sm" />
             <span className="font-semibold">{product.rating}</span>
           </div>
-          <div className="flex items-center space-x-1 text-gray-400">
-            <Download className="w-4 h-4" />
-            <span className="font-medium">{formatDownloads(product.downloads)} unduhan</span>
+          <div className="text-gray-400">
+            <span className="font-medium">{formatDownloads(product.downloads)} terjual</span>
           </div>
         </div>
 

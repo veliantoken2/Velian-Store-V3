@@ -1,10 +1,10 @@
 import React from 'react';
-import { Star, Zap, Shield, Clock, Award, Headphones, Download, CreditCard } from 'lucide-react';
+import { Star, Zap, Shield, Clock, Award, Headphones, CreditCard, Truck } from 'lucide-react';
 
 const ScrollingBanner = () => {
   const bannerItems = [
     { icon: Star, text: "Produk Digital Premium", color: "text-yellow-400" },
-    { icon: Download, text: "Download Instan", color: "text-green-400" },
+    { icon: Truck, text: "Akses Instan", color: "text-green-400" },
     { icon: Shield, text: "Pembayaran Aman", color: "text-blue-400" },
     { icon: Headphones, text: "Support 24/7", color: "text-purple-400" },
     { icon: Award, text: "Garansi Uang Kembali", color: "text-cyan-400" },
