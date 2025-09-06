@@ -36,7 +36,11 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
       } else {
         const { error } = await signUp(formData.email, formData.password, formData.fullName);
         if (error) {
-          setError(error.message);
+          if (error.message === 'User already registered') {
+            setError('Email ini sudah terdaftar. Silakan masuk atau gunakan email lain.');
+          } else {
+            setError(error.message);
+          }
         } else {
           setError('');
           alert('Silakan cek email Anda untuk verifikasi akun!');
