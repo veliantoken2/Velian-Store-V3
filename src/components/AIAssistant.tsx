@@ -52,7 +52,6 @@ const AIAssistant = () => {
       - Menjual produk digital seperti template website, UI kit, ikon, font, foto stok
       - Pembayaran: Transfer bank, e-wallet (GoPay, OVO, DANA), QRIS
       - Download instan setelah pembayaran
-      - Garansi 30 hari uang kembali
       - Support 24/7
       - Update gratis selamanya untuk produk yang dibeli
       - Berbagai jenis lisensi: Basic, Extended, Developer
