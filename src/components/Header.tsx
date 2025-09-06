@@ -51,12 +51,12 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden lg:flex items-center space-x-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+                  className={`relative px-4 py-2.5 text-sm font-medium rounded-lg transition-all duration-300 ${
                     isActive(link.path)
                       ? 'text-cyan-300 bg-blue-500/10'
                       : 'text-gray-300 hover:text-white hover:bg-slate-800/50'
@@ -71,13 +71,13 @@ const Header = () => {
             </nav>
 
             {/* Search Bar */}
-            <div className="hidden md:flex items-center">
+            <div className="hidden lg:flex items-center">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
                   placeholder="Cari produk digital..."
-                  className="pl-10 pr-4 py-2.5 w-72 bg-slate-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 backdrop-blur-sm"
+                  className="pl-10 pr-4 py-2.5 w-64 xl:w-72 bg-slate-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 backdrop-blur-sm"
                 />
               </div>
             </div>
@@ -112,7 +112,7 @@ const Header = () => {
                   
                   {/* User Dropdown */}
                   {isUserMenuOpen && (
-                    <div className="absolute right-0 mt-2 w-56 bg-slate-800/95 backdrop-blur-xl border border-slate-700/50 rounded-xl shadow-2xl shadow-black/20">
+                    <div className="absolute right-0 mt-2 w-56 bg-slate-800/95 backdrop-blur-xl border border-slate-700/50 rounded-xl shadow-2xl shadow-black/20 z-50">
                       <div className="p-3 border-b border-slate-700/50">
                         <p className="font-medium text-white">{user.full_name}</p>
                         <p className="text-sm text-gray-400">{user.email}</p>
@@ -127,7 +127,7 @@ const Header = () => {
                           <span>Profil Saya</span>
                         </Link>
                         <Link 
-                          to="/orders" 
+                          to="/profile" 
                           className="flex items-center space-x-3 px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-slate-700/50 transition-colors"
                           onClick={() => setIsUserMenuOpen(false)}
                         >
@@ -135,7 +135,7 @@ const Header = () => {
                           <span>Pesanan Saya</span>
                         </Link>
                         <Link 
-                          to="/settings" 
+                          to="/profile" 
                           className="flex items-center space-x-3 px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-slate-700/50 transition-colors"
                           onClick={() => setIsUserMenuOpen(false)}
                         >
@@ -157,7 +157,7 @@ const Header = () => {
               ) : (
                 <button
                   onClick={() => setIsAuthModalOpen(true)}
-                  className="px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-medium rounded-xl transition-all duration-300 text-sm"
+                  className="px-4 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-medium rounded-xl transition-all duration-300 text-sm"
                 >
                   Masuk
                 </button>
@@ -194,7 +194,7 @@ const Header = () => {
               </nav>
               
               {/* Mobile Search */}
-              <div className="mt-4 relative">
+              <div className="mt-4 relative lg:hidden">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
