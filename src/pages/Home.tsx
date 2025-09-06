@@ -172,9 +172,9 @@ const Home = () => {
       <ScrollingBanner />
       
       {/* Hero Section with Carousel */}
-      <section className="relative py-12 sm:py-20 px-4 overflow-hidden">
+      <section className="relative py-6 sm:py-20 px-4 overflow-hidden">
         <div className="container mx-auto">
-          <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden">
+          <div className="relative aspect-video rounded-xl sm:rounded-3xl overflow-hidden">
             {heroSlides.map((slide, index) => (
               <div
                 key={index}
@@ -189,21 +189,21 @@ const Home = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/50 to-transparent" />
                 <div className="absolute inset-0 flex items-center">
-                  <div className="container mx-auto px-4 sm:px-8">
-                    <div className="max-w-xl sm:max-w-2xl">
-                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white leading-tight">
+                  <div className="container mx-auto px-3 sm:px-8">
+                    <div className="max-w-xs sm:max-w-2xl">
+                      <h1 className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-6 text-white leading-tight">
                         {slide.title}
                       </h1>
-                      <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
+                      <p className="text-sm sm:text-lg lg:text-xl text-gray-300 mb-4 sm:mb-8 leading-relaxed">
                         {slide.subtitle}
                       </p>
                       <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 text-sm sm:text-base">
+                        <button className="px-4 sm:px-8 py-2 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 text-xs sm:text-base">
                           <span>{slide.cta}</span>
-                          <ArrowRight className="w-5 h-5" />
+                          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                         </button>
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base">
-                          <Play className="w-5 h-5" />
+                        <button className="px-4 sm:px-8 py-2 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 text-white font-semibold rounded-lg sm:rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 text-xs sm:text-base">
+                          <Play className="w-4 h-4 sm:w-5 sm:h-5" />
                           <span>Tonton Demo</span>
                         </button>
                       </div>
@@ -214,12 +214,12 @@ const Home = () => {
             ))}
             
             {/* Slide Indicators */}
-            <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <div className="absolute bottom-2 sm:bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
               {heroSlides.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                     index === currentSlide ? 'bg-white' : 'bg-white/50'
                   }`}
                 />
@@ -234,16 +234,16 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 sm:py-16 px-4">
+      <section className="py-8 sm:py-16 px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                <div className="w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <stat.icon className="w-5 h-5 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-sm sm:text-base text-gray-400">{stat.label}</div>
+                <div className="text-lg sm:text-3xl font-bold text-white mb-1 sm:mb-2">{stat.number}</div>
+                <div className="text-xs sm:text-base text-gray-400">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -251,30 +251,31 @@ const Home = () => {
       </section>
 
       {/* Categories */}
-      <section className="py-12 sm:py-16 px-4">
+      <section className="py-8 sm:py-16 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">Jelajahi Kategori</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
+          <div className="text-center mb-6 sm:mb-12">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-4">Jelajahi Kategori</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-lg px-4">
               Temukan koleksi produk digital terbaik yang telah dikurasi khusus untuk Anda
             </p>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-2">
             {categories.map((category) => (
               <button
                 key={category.name}
                 onClick={() => setSelectedCategory(category.name)}
-                className={`group flex items-center space-x-2 sm:space-x-3 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl font-semibold transition-all duration-300 text-sm sm:text-base ${
+                className={`group flex items-center space-x-1 sm:space-x-3 px-3 sm:px-6 py-2 sm:py-4 rounded-xl sm:rounded-2xl font-semibold transition-all duration-300 text-xs sm:text-base ${
                   selectedCategory === category.name
                     ? `bg-gradient-to-r ${category.color} text-white shadow-lg shadow-blue-500/25 scale-105`
                     : 'bg-slate-800/50 text-gray-300 hover:text-white hover:bg-slate-700/50 border border-slate-600 hover:border-slate-500'
                 }`}
               >
-                <div className={`p-1.5 sm:p-2 rounded-lg ${selectedCategory === category.name ? 'bg-white/20' : 'bg-slate-700'} group-hover:bg-white/20 transition-colors duration-300`}>
+                <div className={`p-1 sm:p-2 rounded-lg ${selectedCategory === category.name ? 'bg-white/20' : 'bg-slate-700'} group-hover:bg-white/20 transition-colors duration-300`}>
                   <category.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <span>{category.name}</span>
+                <span className="hidden sm:inline">{category.name}</span>
+                <span className="sm:hidden text-xs">{category.name.split(' ')[0]}</span>
               </button>
             ))}
           </div>
@@ -282,22 +283,22 @@ const Home = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-12 sm:py-16 px-4">
+      <section className="py-8 sm:py-16 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">Produk Unggulan</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
+          <div className="text-center mb-6 sm:mb-12">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-4">Produk Unggulan</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-lg px-4">
               Produk premium pilihan yang disukai ribuan pelanggan
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 px-2 sm:px-0">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 sm:mt-12">
             <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 mx-auto text-sm sm:text-base">
               <span>Lihat Semua Produk</span>
               <ChevronRight className="w-5 h-5" />
@@ -307,34 +308,34 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-12 sm:py-20 px-4">
+      <section className="py-8 sm:py-20 px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 text-center group hover:border-blue-500/50 transition-all duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-8 px-2 sm:px-0">
+            <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-slate-600/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center group hover:border-blue-500/50 transition-all duration-300">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Download className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-4">Download Instan</h3>
+              <h3 className="text-base sm:text-xl font-bold text-white mb-2 sm:mb-4">Download Instan</h3>
               <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                 Dapatkan akses langsung ke semua file setelah pembelian. Tidak perlu menunggu!
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 text-center group hover:border-blue-500/50 transition-all duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-slate-600/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center group hover:border-blue-500/50 transition-all duration-300">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-4">Pembayaran Aman</h3>
+              <h3 className="text-base sm:text-xl font-bold text-white mb-2 sm:mb-4">Pembayaran Aman</h3>
               <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                 Sistem pembayaran terenkripsi dengan berbagai metode pembayaran yang aman.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 text-center group hover:border-blue-500/50 transition-all duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-slate-600/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center group hover:border-blue-500/50 transition-all duration-300">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Award className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-4">Kualitas Premium</h3>
+              <h3 className="text-base sm:text-xl font-bold text-white mb-2 sm:mb-4">Kualitas Premium</h3>
               <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                 Semua produk telah melalui kurasi ketat untuk memastikan kualitas terbaik.
               </p>
@@ -344,21 +345,21 @@ const Home = () => {
       </section>
 
       {/* Newsletter */}
-      <section className="py-12 sm:py-20 px-4">
+      <section className="py-8 sm:py-20 px-4">
         <div className="container mx-auto">
-          <div className="relative bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-slate-600/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-center overflow-hidden">
+          <div className="relative bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-slate-600/50 rounded-xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-center overflow-hidden mx-2 sm:mx-0">
             <div className="relative z-10">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">Tetap Update</h2>
-              <p className="text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto text-base sm:text-lg">
+              <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-4">Tetap Update</h2>
+              <p className="text-gray-300 mb-4 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-lg">
                 Berlangganan untuk mendapatkan notifikasi produk baru, penawaran eksklusif, dan promo spesial
               </p>
               <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
                 <input
                   type="email"
                   placeholder="Masukkan email Anda"
-                  className="flex-1 px-4 sm:px-6 py-3 sm:py-4 bg-slate-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm text-sm sm:text-base"
+                  className="flex-1 px-4 sm:px-6 py-3 sm:py-4 bg-slate-800/50 border border-gray-600/50 rounded-lg sm:rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm text-sm sm:text-base"
                 />
-                <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 transform hover:scale-105 text-sm sm:text-base">
+                <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold rounded-lg sm:rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 transform hover:scale-105 text-sm sm:text-base">
                   Berlangganan
                 </button>
               </div>

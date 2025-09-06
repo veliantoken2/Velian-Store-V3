@@ -71,13 +71,13 @@ const Header = () => {
             </nav>
 
             {/* Search Bar */}
-            <div className="hidden lg:flex items-center">
+            <div className="hidden md:flex items-center">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
                   placeholder="Cari produk digital..."
-                  className="pl-10 pr-4 py-2.5 w-64 xl:w-72 bg-slate-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 backdrop-blur-sm"
+                  className="pl-10 pr-4 py-2.5 w-48 lg:w-64 xl:w-72 bg-slate-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-300 backdrop-blur-sm"
                 />
               </div>
             </div>
@@ -194,7 +194,7 @@ const Header = () => {
               </nav>
               
               {/* Mobile Search */}
-              <div className="mt-4 relative lg:hidden">
+              <div className="mt-4 relative md:hidden">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"

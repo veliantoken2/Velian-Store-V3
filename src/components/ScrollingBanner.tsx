@@ -16,26 +16,26 @@ const ScrollingBanner = () => {
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 border-b border-blue-500/20">
       {/* Fixed height for consistent banner size */}
-      <div className="h-12 flex items-center">
+      <div className="h-10 sm:h-12 flex items-center">
         <div className="flex animate-scroll">
           {/* First set */}
           {bannerItems.map((item, index) => (
-            <div key={`first-${index}`} className="flex items-center space-x-2 mx-6 whitespace-nowrap group">
-              <div className="p-1.5 bg-white/10 rounded-lg group-hover:bg-white/20 transition-all duration-300">
+            <div key={`first-${index}`} className="flex items-center space-x-1 sm:space-x-2 mx-3 sm:mx-6 whitespace-nowrap group">
+              <div className="p-1 sm:p-1.5 bg-white/10 rounded-lg group-hover:bg-white/20 transition-all duration-300">
                 <item.icon className={`w-4 h-4 ${item.color}`} />
               </div>
-              <span className="font-medium text-white text-sm group-hover:text-cyan-300 transition-colors duration-300">
+              <span className="font-medium text-white text-xs sm:text-sm group-hover:text-cyan-300 transition-colors duration-300">
                 {item.text}
               </span>
             </div>
           ))}
           {/* Duplicate for seamless scroll */}
           {bannerItems.map((item, index) => (
-            <div key={`second-${index}`} className="flex items-center space-x-2 mx-6 whitespace-nowrap group">
-              <div className="p-1.5 bg-white/10 rounded-lg group-hover:bg-white/20 transition-all duration-300">
+            <div key={`second-${index}`} className="flex items-center space-x-1 sm:space-x-2 mx-3 sm:mx-6 whitespace-nowrap group">
+              <div className="p-1 sm:p-1.5 bg-white/10 rounded-lg group-hover:bg-white/20 transition-all duration-300">
                 <item.icon className={`w-4 h-4 ${item.color}`} />
               </div>
-              <span className="font-medium text-white text-sm group-hover:text-cyan-300 transition-colors duration-300">
+              <span className="font-medium text-white text-xs sm:text-sm group-hover:text-cyan-300 transition-colors duration-300">
                 {item.text}
               </span>
             </div>
@@ -44,8 +44,8 @@ const ScrollingBanner = () => {
       </div>
       
       {/* Gradient overlays */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-900 to-transparent pointer-events-none"></div>
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-900 to-transparent pointer-events-none"></div>
+      <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-20 bg-gradient-to-r from-slate-900 to-transparent pointer-events-none"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-20 bg-gradient-to-l from-slate-900 to-transparent pointer-events-none"></div>
       
       <style jsx>{`
         @keyframes scroll {
